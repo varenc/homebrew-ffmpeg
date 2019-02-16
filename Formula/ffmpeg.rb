@@ -87,7 +87,6 @@ class Ffmpeg < Formula
       --enable-shared
       --enable-version3
       --enable-hardcoded-tables
-      --enable-avresample
       --cc=#{ENV.cc}
       --host-cflags=#{ENV.cflags}
       --host-ldflags=#{ENV.ldflags}
