@@ -22,7 +22,7 @@ class Ffmpeg < Formula
   option "with-openssl", "Enable SSL support"
   option "with-rubberband", "Enable rubberband library"
   option "with-webp", "Enable using libwebp to encode WEBP images"
-  option "with-zeromq", "Enable using libzeromq to receive commands sent through a libzeromq client"
+  option "with-zeromq", "Enable using libzeromq to receive cmds sent through a libzeromq client"
   option "with-zimg", "Enable z.lib zimg library"
   option "with-srt", "Enable SRT library"
   option "with-libvmaf", "Enable libvmaf scoring library"
