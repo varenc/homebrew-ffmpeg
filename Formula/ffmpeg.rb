@@ -38,7 +38,6 @@ class Ffmpeg < Formula
   depends_on "libass"
   depends_on "libvorbis"
   depends_on "libvpx"
-  depends_on "opencore-amr"
   depends_on "opus"
   depends_on "rtmpdump"
   depends_on "sdl2"
@@ -69,6 +68,7 @@ class Ffmpeg < Formula
   depends_on "libssh" => :optional
   depends_on "libvidstab" => :optional
   depends_on "libvmaf" => :optional
+  depends_on "opencore-amr" => :optional
   depends_on "openh264" => :optional
   depends_on "openjpeg" => :optional
   depends_on "openssl" => :optional
@@ -85,7 +85,6 @@ class Ffmpeg < Formula
     args = %W[
       --prefix=#{prefix}
       --enable-shared
-      --enable-version3
       --enable-hardcoded-tables
       --cc=#{ENV.cc}
       --host-cflags=#{ENV.cflags}
@@ -105,8 +104,6 @@ class Ffmpeg < Formula
       --enable-libfreetype
       --enable-frei0r
       --enable-libass
-      --enable-libopencore-amrnb
-      --enable-libopencore-amrwb
       --enable-librtmp
       --enable-libspeex
       --disable-libjack
@@ -142,6 +139,12 @@ class Ffmpeg < Formula
     args << "--enable-libzimg" if build.with? "zimg"
     args << "--enable-libzmq" if build.with? "zeromq"
     args << "--enable-openssl" if build.with? "openssl"
+
+    if build.with? "opencore-amr"
+      args << "--enable-version3"
+      args << "--enable-libopencore-amrnb"
+      args << "--enable-libopencore-amrwb"
+    end
 
     if build.with? "openjpeg"
       args << "--enable-libopenjpeg"
