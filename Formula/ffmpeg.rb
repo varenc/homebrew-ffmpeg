@@ -68,6 +68,7 @@ class Ffmpeg < Formula
   depends_on "libssh" => :optional
   depends_on "libvidstab" => :optional
   depends_on "libvmaf" => :optional
+  depends_on "libxml2" => :optional
   depends_on "opencore-amr" => :optional
   depends_on "openh264" => :optional
   depends_on "openjpeg" => :optional
@@ -83,7 +84,6 @@ class Ffmpeg < Formula
   depends_on "xvid" => :optional
   depends_on "zeromq" => :optional
   depends_on "zimg" => :optional
-  depends_on "libxml2" => :optional
 
   def install
     args = %W[
