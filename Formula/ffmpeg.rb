@@ -26,6 +26,7 @@ class Ffmpeg < Formula
   option "with-zimg", "Enable z.lib zimg library"
   option "with-srt", "Enable SRT library"
   option "with-libvmaf", "Enable libvmaf scoring library"
+  option "with-libxml2", "Enable libxml2 library"
 
   depends_on "nasm" => :build
   depends_on "pkg-config" => :build
@@ -82,6 +83,7 @@ class Ffmpeg < Formula
   depends_on "xvid" => :optional
   depends_on "zeromq" => :optional
   depends_on "zimg" => :optional
+  depends_on "libxml2" => :optional
 
   def install
     args = %W[
@@ -141,6 +143,7 @@ class Ffmpeg < Formula
     args << "--enable-libzimg" if build.with? "zimg"
     args << "--enable-libzmq" if build.with? "zeromq"
     args << "--enable-openssl" if build.with? "openssl"
+    args << "--enable-libxml2" if build.with? "libxml2"
 
     # packages that need additional license options
     if build.with?("opencore-amr") || build.with?("libvmaf")
