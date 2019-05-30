@@ -146,11 +146,6 @@ class Ffmpeg < Formula
     args << "--enable-libzmq" if build.with? "zeromq"
     args << "--enable-openssl" if build.with? "openssl"
 
-    if build.with? "opencore-amr"
-      args << "--enable-libopencore-amrnb"
-      args << "--enable-libopencore-amrwb"
-    end
-
     # These librares are GPL-incompatible, and require ffmpeg be built with
     # the "--enable-nonfree" flag, which produces unredistributable libraries
     args << "--enable-nonfree" if build.with?("decklink") || build.with?("fdk-aac") || build.with?("openssl")
@@ -163,6 +158,11 @@ class Ffmpeg < Formula
 
     if build.with?("opencore-amr") || build.with?("libvmaf")
       args << "--enable-version3"
+    end
+
+    if build.with? "opencore-amr"
+      args << "--enable-libopencore-amrnb"
+      args << "--enable-libopencore-amrwb"
     end
 
     if build.with? "openjpeg"
