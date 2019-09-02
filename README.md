@@ -137,5 +137,4 @@ If the problem is reproducible with the `homebrew-core` version of `ffmpeg`, ple
 ## Maintainers
 
 - Chris Varenhorst (`@varenc`)
-- Reto Kromer (`@retokromer`)
 - Werner Robitza (`@slhck`)
