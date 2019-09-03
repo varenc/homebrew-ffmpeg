@@ -2,6 +2,8 @@
 
 This is a 3rd party tap for [Homebrew](http://brew.sh/). It provides a formula for `ffmpeg` which includes options for enabling additional features and libraries.
 
+> **⚠️ Note:** This tap is currently not actively maintained. For an up-to-date tap, see [`homebrew-ffmpeg`](https://github.com/homebrew-ffmpeg/homebrew-ffmpeg).
+
 Contents:
 
 - [Installation and usage](#installation-and-usage)
@@ -137,4 +139,3 @@ If the problem is reproducible with the `homebrew-core` version of `ffmpeg`, ple
 ## Maintainers
 
 - Chris Varenhorst (`@varenc`)
-- Werner Robitza (`@slhck`)
