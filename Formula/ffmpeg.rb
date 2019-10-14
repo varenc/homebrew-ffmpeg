@@ -87,6 +87,11 @@ class Ffmpeg < Formula
   depends_on "zimg" => :optional
 
   def install
+    # Work around Xcode 11 clang bug
+    # https://bitbucket.org/multicoreware/x265/issues/514/wrong-code-generated-on-macos-1015
+    # https://trac.ffmpeg.org/ticket/8073
+    ENV.append_to_cflags "-fno-stack-check" if DevelopmentTools.clang_build_version >= 1010
+
     args = %W[
       --prefix=#{prefix}
       --enable-shared
